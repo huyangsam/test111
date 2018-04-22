@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 求某个10位以内的数字，每位数是多少
+		// 9174398
+		// 1897
+		// 109854293
+		// 打印各位数字
+
+		var num = 71437;
+
+		while (num !== 0) {
+			var val = num % 10;
+			console.log(val);
+			num = Math.floor(num / 10)
+		}
+
+		/*do {
+
+		} while();*/
+
+
+		// 109854293 % 10  	--> 3
+		// 10985429 % 10	--> 9
+		// 1098542 % 10		--> 2
+		// 109854 % 10		--> 4
+		// 10985 % 10		--> 5
+		// 1098 % 10		--> 8
+		// 109 % 10			--> 9
+		// 10 % 10			--> 0
+		// 1 % 10			--> 1
+		// 0
+
+	</script>
+</body>
+</html>

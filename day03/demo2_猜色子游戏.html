@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	总金币数量：<input type="text" value="1000" id="totalMoney" readonly="readonly"><br>
+	押金币：<input type="text" value="100" id="markMoney"><br>
+	押大小：<select id="markPoint">
+		<option>大</option>
+		<option>小</option>
+	</select><br>
+	<button id="start">开大小</button>
+	三个色子点数：
+		<input type="text" id="first">
+		<input type="text" id="second">
+		<input type="text" id="third">
+	和：<input type="text" id="sum"><br>
+	开大小：<input type="text" id="points"><br>
+	结果：<input type="text" id="result">
+
+	<script>
+		document.getElementById("start").onclick = function(){
+			// 生成三个色子点数
+			var _first = Math.floor(Math.random() * 6) + 1;
+			document.getElementById("first").value = _first;
+			var _second = Math.floor(Math.random() * 6) + 1;
+			document.getElementById("second").value = _second;
+			var _third = Math.floor(Math.random() * 6) + 1;
+			document.getElementById("third").value = _third;
+			// 计算三个色子点数之和
+			var _sum = _first + _second + _third;
+			document.getElementById("sum").value = _sum;
+			// 计算开大小
+			var _open = _sum <= 10 ? "小" : "大";
+			document.getElementById("points").value = "开" + _open;
+			// 判断是否押中
+			var _markPoint = document.getElementById("markPoint").value;
+			// 获取总金币与所押金币数量
+			var _total = Number(document.getElementById("totalMoney").value),
+				_mark = Number(document.getElementById("markMoney").value),
+				_result;
+			if (_markPoint === _open) { // 押中
+				// 提示押中
+				_result = "押中了";
+				// 修改金币数量				
+				_total += _mark;
+			} else { // 未押中
+				// 提示押中
+				_result = "失败了";
+				// 修改金币数量
+				_total -= _mark;
+			}
+			document.getElementById("result").value = _result;
+			document.getElementById("totalMoney").value = _total;
+		}
+	</script>
+</body>
+</html>

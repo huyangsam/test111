@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 水仙花数：
+		//		三位数
+		//		各位数字立方之和等于该三位数本身
+		// 查找所有的水仙花数
+		for (var i = 100; i <= 999; i++) {
+			// abc
+			// a*a*a + b*b*b + c*c*c === abc
+			// 求当前遍历到数字的各位
+			var c = i % 10,
+				b = Math.floor(i % 100 / 10),
+				a = Math.floor(i / 100);
+			if (a*a*a + b*b*b + c*c*c == i) {
+				console.log(i);
+			}
+		}
+
+	</script>
+</body>
+</html>

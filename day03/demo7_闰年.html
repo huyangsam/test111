@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 查找从 1900年到 2018年之间所有的闰年
+		// 穷举法
+		for (var year = 1900; year <= 2018; year++) {
+			if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0)
+				console.log(year);
+		}
+	</script>
+</body>
+</html>

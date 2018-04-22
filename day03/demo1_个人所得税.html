@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var income = 38000, // 税前工资
+			fee = 1000, // 各项社保公积金
+			start = 3500, // 起征点
+			taxMoney = income - fee - start, // 应纳税所得额
+			rate, // 税率
+			minus, // 速算扣除数
+			tax, // 应纳税款
+			pay; // 实发工资
+
+		// 判断应纳税所得额所在区间，计算税率和速算扣除数
+		if (taxMoney <= 0) {
+			rate = 0;
+			minus = 0;
+		} else if (taxMoney <= 1500) {
+			rate = 0.03;
+			minus = 0;
+		} else if (taxMoney <= 4500) {
+			rate = 0.1;
+			minus = 105;
+		} else if (taxMoney <= 9000) {
+			rate = 0.2;
+			minus = 555;
+		} else if (taxMoney <= 35000) {
+			rate = 0.25;
+			minus = 1005;
+		} else if (taxMoney <= 55000) {
+			rate = 0.3;
+			minus = 2755;
+		} else if (taxMoney <= 80000) {
+			rate = 0.35;
+			minus = 5505;
+		} else {
+			rate = 0.45;
+			minus = 13505;
+		}
+
+		// 计算应纳税款
+		tax = taxMoney * rate - minus;
+		// 计算实发工资
+		pay = income - fee - tax;
+
+		console.log("税前工资：" + income);
+		console.log("社保公积金：" + fee);
+		console.log("应纳税所得额：" + taxMoney);
+		console.log("适用税率：" + rate);
+		console.log("速算扣除数：" + minus);
+		console.log("应纳税款：" + tax);
+		console.log("实发工资：" + pay);
+	</script>
+</body>
+</html>

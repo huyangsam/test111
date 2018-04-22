@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*for (var j = 1; j <= 5; j++) { // 行数
+			var stars = "";
+			for (var i = 1; i <= j; i++) { // 每行打印的*
+				stars += "*";
+			}
+			console.log(stars);
+		}*/
+
+		/*// 左下角直角
+		var rows = 15;
+		var str = ""; // 整个图形所有的*
+		for (var i = 1; i <= rows; i++) { // 行数
+			var stars = "";
+			for (var j = 1; j <= i; j++) { // 每行的列数
+				stars += "*";
+			}
+			str += stars + "\n";
+		}
+		console.log(str);*/
+
+		/*// 右下角直角
+		var rows = 15;
+		var str = "";
+		for (var i = 1; i <= rows; i++) { // 行数
+			var stars = "";
+			for (var k = 1; k <= rows - i; k++) {
+				stars += " ";
+			}
+			for (var j = 1; j <= i; j++) { // *
+				stars += "*";
+			}
+			str += stars + "\n";
+		}
+		console.log(str);*/
+//
+//		// 等腰三角形
+//		var rows = 25;
+//		var str = "";
+//		for (var i = 1; i <= rows; i++) { // 行数
+//			for ( var j = 1; j <= rows - i; j++) { // 空格
+//				str += " ";
+//			}
+//			for ( var k = 1; k <= i * 2 - 1; k++) { // *
+//				str += "*";
+//			}
+//			str += "\n";
+//		}
+//		console.log(str);
+
+		var str = "";
+		for (var i = 1; i <= 9; i++) { // 行数
+			for (var j = 1; j <= i; j++) { // 每行口诀
+				str += j + "*" + i + "=" + (i * j) + "\t";
+			}
+			str += "\n";
+		}
+
+		console.log(str);
+
+
+
+		/*// 打印37个*
+		var stars = "";
+		for (var i = 1; i <= 37; i++) {
+			stars += "*";
+		}
+		console.log(stars);
+
+		// 打印38个*
+		var stars = "";
+		for (var i = 1; i <= 38; i++) {
+			stars += "*";
+		}
+		console.log(stars);
+
+		// 打印39个*
+		var stars = "";
+		for (var i = 1; i <= 39; i++) {
+			stars += "*";
+		}
+		console.log(stars);*/
+	</script>
+</body>
+</html>
